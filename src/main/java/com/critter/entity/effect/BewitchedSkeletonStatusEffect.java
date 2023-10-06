@@ -5,6 +5,6 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class BewitchedSkeletonStatusEffect extends StatusEffect {
     public BewitchedSkeletonStatusEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 3402751);
+        super(StatusEffectCategory.BENEFICIAL, 3939635);
     }
 }

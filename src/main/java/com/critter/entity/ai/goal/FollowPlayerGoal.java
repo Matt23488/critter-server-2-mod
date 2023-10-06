@@ -10,12 +10,12 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * A target goal that finds a target by entity class when the goal starts.
+/*
+ * This goal is mostly a copy of TemptGoal, with the ingredient, scared, and look at stuff removed.
  */
 public class FollowPlayerGoal<T extends LivingEntity>
 extends Goal {
-    private static final TargetPredicate FOLLOW_TARGET_PREDICATE = TargetPredicate.createNonAttackable().setBaseMaxDistance(32.0).ignoreVisibility();
+    private static final TargetPredicate FOLLOW_TARGET_PREDICATE = TargetPredicate.createNonAttackable().setBaseMaxDistance(64.0).ignoreVisibility();
     private final TargetPredicate predicate;
     private final Predicate<?> goalPredicate;
     protected final PathAwareEntity mob;
@@ -50,10 +50,6 @@ extends Goal {
         return this.canStart();
     }
 
-    // protected boolean canBeScared() {
-    //     return this.canBeScared;
-    // }
-
     @Override
     public void start() {
         this.active = true;
@@ -69,7 +65,6 @@ extends Goal {
 
     @Override
     public void tick() {
-        // this.mob.getLookControl().lookAt(this.closestPlayer, this.mob.getMaxHeadRotation() + 20, this.mob.getMaxLookPitchChange());
         if (this.mob.squaredDistanceTo(this.closestPlayer) < 6.25) {
             this.mob.getNavigation().stop();
         } else {
