@@ -1,0 +1,20 @@
+{
+    "type": "origins:creative_flight",
+    "name": "Daytime Creative Flight",
+    "description": "You can flight like in creative mode during the day.",
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:time_of_day",
+                "comparison": ">=",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:time_of_day",
+                "comparison": "<",
+                "compare_to": 13000
+            }
+        ]
+    }
+}

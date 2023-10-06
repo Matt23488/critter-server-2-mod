@@ -1,0 +1,17 @@
+{
+    "type": "origins:action_on_hit",
+    "name": "Sneak Strike",
+    "description": "Hitting a foe in the back deals massive damage.",
+    "bientity_condition": {
+        "type": "origins:invert",
+        "condition": {
+            "type": "origins:can_see",
+            "inverted": true
+        }
+    },
+    "bientity_action": {
+        "type": "origins:damage",
+        "amount": 20,
+        "damage_type": "minecraft:player"
+    }
+}

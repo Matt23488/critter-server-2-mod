@@ -1,0 +1,33 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Reached Super Nether",
+            "color": "dark_red"
+        },
+        "description": {
+            "text": "Reach the Super Nether to gain Netherling powers."
+        },
+        "icon": {
+            "item": "minecraft:crying_obsidian"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Touch Water": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "from": "the_nether",
+                "to": "critter:super_nether"
+            }
+        }
+    },
+    "rewards": {
+        "experience": 100,
+        "function": "critter:advancements/netherling"
+    },
+    "parent": "critter:root"
+}

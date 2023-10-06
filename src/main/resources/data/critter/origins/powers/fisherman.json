@@ -1,0 +1,17 @@
+{
+    "name": "Fisherman",
+    "description": "You love to fish and are good at it, in part thanks to having good luck.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:cod"
+    },
+    "powers": [
+        "critter:passive/increased_health_6",
+        "critter:passive/good_luck",
+        "critter:passive/invisible_fishing",
+        "critter:passive/fish_exp",
+        "critter:equipment/ol_bess",
+        "critter:recipe/easy_fishing_rod",
+        "critter:special/spread_luck_dummy"
+    ]
+}

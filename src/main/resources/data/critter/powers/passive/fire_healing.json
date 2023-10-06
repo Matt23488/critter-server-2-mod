@@ -1,0 +1,18 @@
+{
+    "type": "origins:modify_damage_taken",
+    "name": "Fire Healing",
+    "description": "You will be healed by all sources of fire damage.",
+    "damage_condition": {
+        "type": "origins:in_tag",
+        "tag": "minecraft:is_fire"
+    },
+    "self_action": {
+        "type": "origins:heal",
+        "amount": 0.01
+    },
+    "modifier": {
+        "name": "Fire immunity",
+        "operation": "set_total",
+        "value": 0
+    }
+}

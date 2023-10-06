@@ -1,0 +1,34 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Critter Server",
+            "color": "dark_purple",
+            "strikethrough": false,
+            "obfuscated": false,
+            "underlined": false,
+            "italic": true,
+            "bold": true
+        },
+        "description": {
+            "text": "You have begun your journey as a Minecraft Critter!"
+        },
+        "icon": {
+            "item": "minecraft:player_head",
+            "nbt": "{SkullOwner:\"MHF_Herobrine\"}"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
+    },
+    "criteria": {
+        "Touch Air": {
+            "trigger": "minecraft:enter_block",
+            "conditions": {
+                "block": "minecraft:air"
+            }
+        }
+    }
+}

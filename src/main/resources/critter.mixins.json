@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.critter.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"CritterMixin",
+		"BewitchedSkeletonMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

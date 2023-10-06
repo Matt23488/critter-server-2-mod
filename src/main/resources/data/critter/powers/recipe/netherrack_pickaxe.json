@@ -1,0 +1,25 @@
+{
+    "type": "origins:recipe",
+    "name": "Netherrack Pickaxe",
+    "description": "You can craft a Stone Pickaxe using Netherrack.",
+    "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "id": "netherrack_pickaxe",
+        "pattern": [
+            "NNN",
+            " S ",
+            " S "
+        ],
+        "key": {
+            "N": {
+                "item": "minecraft:netherrack"
+            },
+            "S": {
+                "item": "minecraft:stick"
+            }
+        },
+        "result": {
+            "item": "minecraft:stone_pickaxe"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "origins:modify_player_spawn",
+    "name": "The Nether",
+    "description": "You will spawn in The Nether.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "This only affects joining the server for the very first time. You can still sleep in a bed to set your spawn point.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        }
+    ],
+    "dimension": "minecraft:the_nether",
+    "dimension_distance_multiplier": 0.125
+}

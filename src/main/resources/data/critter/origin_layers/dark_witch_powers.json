@@ -1,0 +1,9 @@
+{
+    "name": "Dark Witch power",
+    "order": 9,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/none",
+        "critter:powers/dark_witch"
+    ]
+}

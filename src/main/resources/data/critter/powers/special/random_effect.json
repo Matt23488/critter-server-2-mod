@@ -1,0 +1,68 @@
+{
+    "type": "origins:active_self",
+    "name": "???",
+    "description": "???",
+    "cooldown": 600,
+    "entity_action": {
+        "type": "origins:choice",
+        "actions": [
+            {
+                "weight": 10,
+                "element": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 90,
+                            "element": {
+                                "type": "origins:spawn_entity",
+                                "entity_type": "minecraft:creeper",
+                                "tag": "{NoAI:1b}"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:spawn_entity",
+                                "entity_type": "minecraft:creeper"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "weight": 10,
+                "element": {
+                    "type": "origins:drop_inventory"
+                }
+            },
+            {
+                "weight": 10,
+                "element": {
+                    "type": "origins:play_sound",
+                    "sound": "entity.villager.ambient",
+                    "volume": 2,
+                    "pitch": 0.5
+                }
+            },
+            {
+                "weight": 10,
+                "element": {
+                    "type": "origins:area_of_effect",
+                    "radius": 32,
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:set_on_fire",
+                            "duration": 5
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "key": "key.origins.primary_active",
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 18
+    }
+}

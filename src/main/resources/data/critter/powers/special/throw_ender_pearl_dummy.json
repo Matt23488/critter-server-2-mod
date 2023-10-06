@@ -1,0 +1,23 @@
+{
+    "type": "origins:active_self",
+    "name": "Throw Ender Pearl",
+    "description": "You can throw Ender Pearls.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Throw with %s"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "30 second cooldown"
+        }
+    ],
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "entity_action": {
+        "type": "origins:nothing"
+    }
+}

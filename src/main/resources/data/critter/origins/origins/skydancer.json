@@ -1,0 +1,18 @@
+{
+    "name": "Skydancer",
+    "description": "You are born of The Sky.",
+    "icon": {
+        "item": "minecraft:feather"
+    },
+    "powers": [
+        "critter:spawn/sky",
+        "critter:passive/increased_health_2",
+        "critter:passive/fall_healing",
+        "critter:passive/elytra_flight",
+        "critter:passive/endurance",
+        "critter:equipment/spyglass",
+        "critter:recipe/easy_rocket",
+        "critter:special/launch_dummy",
+        "critter:grant/skydancer"
+    ]
+}

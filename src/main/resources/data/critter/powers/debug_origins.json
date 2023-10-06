@@ -1,0 +1,35 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Debug",
+    "description": "Starts with some items for debugging Critter Origins.",
+    "stacks": [
+        {
+            "item": "origins:orb_of_origin",
+            "tag": "{ Targets: [{ Origin: \"critter:powers/netherling\", Layer: \"critter:netherling_powers\" }], display: { Name:'{\"text\":\"Netherling Powers\"}'} }"
+        },
+        {
+            "item": "origins:orb_of_origin",
+            "tag": "{ Targets: [{ Origin: \"critter:powers/skydancer\", Layer: \"critter:skydancer_powers\" }], display: { Name:'{\"text\":\"Skydancer Powers\"}'} }"
+        },
+        {
+            "item": "origins:orb_of_origin",
+            "tag": "{ Targets: [{ Origin: \"critter:powers/waterborn\", Layer: \"critter:waterborn_powers\" }], display: { Name:'{\"text\":\"Waterborn Powers\"}'} }"
+        },
+        {
+            "item": "origins:orb_of_origin",
+            "tag": "{ Targets: [{ Origin: \"critter:powers/rogue\", Layer: \"critter:rogue_powers\" }], display: { Name:'{\"text\":\"Rogue Powers\"}'} }"
+        },
+        {
+            "item": "origins:orb_of_origin",
+            "tag": "{ Targets: [{ Origin: \"critter:powers/huggy_wuggy\", Layer: \"critter:huggy_wuggy_powers\" }], display: { Name:'{\"text\":\"Huggy Wuggy Powers\"}'} }"
+        },
+        {
+            "item": "origins:orb_of_origin",
+            "tag": "{ Targets: [{ Origin: \"critter:powers/fisherman\", Layer: \"critter:fisherman_powers\" }], display: { Name:'{\"text\":\"Fisherman Powers\"}'} }"
+        },
+        {
+            "item": "origins:orb_of_origin",
+            "tag": "{ Targets: [{ Origin: \"critter:powers/chaos\", Layer: \"critter:chaos_powers\" }], display: { Name:'{\"text\":\"??? Powers\"}'} }"
+        }
+    ]
+}

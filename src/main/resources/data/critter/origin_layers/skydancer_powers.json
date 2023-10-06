@@ -1,0 +1,9 @@
+{
+    "name": "Skydancer power",
+    "order": 4,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/none",
+        "critter:powers/skydancer"
+    ]
+}

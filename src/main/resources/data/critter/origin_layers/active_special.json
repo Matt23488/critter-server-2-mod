@@ -1,0 +1,15 @@
+{
+    "name": "Active Special",
+    "order": 2,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/none",
+        "critter:special/fireball",
+        "critter:special/launch",
+        "critter:special/ignore_water_toggle",
+        "critter:special/throw_ender_pearl",
+        "critter:special/grow",
+        "critter:special/spread_luck",
+        "critter:special/random_effect"
+    ]
+}

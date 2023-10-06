@@ -1,0 +1,145 @@
+{
+    "type": "origins:active_self",
+    "hidden": true,
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "critter:powers/fisherman"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "origin set @s critter:active_special critter:special/spread_luck"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Spread Luck\",\"color\":\"green\"}]"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "critter:powers/dark_witch"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "origin set @s critter:active_special critter:special/bewitch_skeletons"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Bewitch Skeletons\",\"color\":\"green\"}]"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "critter:powers/chaos"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "origin set @s critter:active_special critter:special/random_effect"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"???\",\"color\":\"green\"}]"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "critter:powers/netherling"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "origin set @s critter:active_special critter:special/fireball"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [\"\",{\"text\": \"Switched Special to \"}, {\"text\": \"Fireball\", \"color\": \"green\"}]"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "critter:powers/skydancer"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "origin set @s critter:active_special critter:special/launch"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [\"\",{\"text\": \"Switched Special to \"}, {\"text\": \"Launch\", \"color\": \"green\"}]"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "critter:powers/waterborn"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "origin set @s critter:active_special critter:special/ignore_water_toggle"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [\"\",{\"text\": \"Switched Special to \"}, {\"text\": \"Ignore Water Toggle\", \"color\": \"green\"}]"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:origin",
+                    "origin": "critter:powers/rogue"
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "origin set @s critter:active_special critter:special/throw_ender_pearl"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Throw Ender Pearl\",\"color\":\"green\"}]"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

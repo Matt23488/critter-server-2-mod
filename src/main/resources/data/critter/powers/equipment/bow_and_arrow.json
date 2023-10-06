@@ -1,0 +1,15 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Bow and Arrow",
+    "description": "You spawn with a Bow and a stack of Arrows.",
+    "recurrent": true,
+    "stacks": [
+        {
+            "item": "minecraft:bow"
+        },
+        {
+            "item": "minecraft:arrow",
+            "amount": 64
+        }
+    ]
+}

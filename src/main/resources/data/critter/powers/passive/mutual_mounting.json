@@ -1,0 +1,39 @@
+{
+    "type": "origins:multiple",
+    "name": "Mutual Mounting",
+    "description": "You can ride other players, and they can ride you.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Mount with %s"
+        }
+    ],
+
+    "mount": {
+        "type": "origins:active_self",
+        "key": "key.use",
+        "cooldown": 10,
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 3,
+            "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                }
+            },
+            "bientity_action": {
+                "type": "origins:mount"
+            }
+        }
+    },
+
+    "mounted": {
+        "type": "origins:action_on_being_used",
+        "bientity_action": {
+            "type": "origins:mount"
+        }   
+    }
+}

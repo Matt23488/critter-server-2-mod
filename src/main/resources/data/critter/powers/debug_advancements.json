@@ -1,0 +1,14 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Debug Advancements",
+    "description": "Starting equipment for testing and debugging custom advancements.",
+    "stacks": [
+        {
+            "item": "minecraft:glowstone",
+            "amount": 64
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ]
+}

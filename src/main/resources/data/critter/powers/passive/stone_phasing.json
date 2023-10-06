@@ -1,0 +1,26 @@
+{
+    "type": "origins:multiple",
+    "name": "Stone Phasing",
+    "description": "You can move through solid stone.",
+
+    "phase": {
+        "type": "origins:phasing",
+        "render_type": "none",
+        "view_distance": 10,
+        "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:stone"
+        }
+    },
+
+    "vision": {
+        "type": "origins:night_vision",
+        "condition": {
+            "type": "origins:in_block_anywhere",
+            "block_condition": {
+                "type": "origins:block",
+                "block": "minecraft:stone"
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Netherling",
+    "description": "You are born of The Nether.",
+    "icon": {
+        "item": "minecraft:nether_star"
+    },
+    "powers": [
+        "critter:spawn/nether",
+        "critter:passive/increased_health_1",
+        "critter:passive/fire_healing",
+        "critter:passive/walk_on_lava",
+        "critter:passive/lava_vision",
+        "critter:equipment/iron_pickaxe",
+        "critter:recipe/netherrack_pickaxe",
+        "critter:special/fireball_dummy",
+        "critter:grant/netherling"
+    ]
+}

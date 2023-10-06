@@ -1,0 +1,17 @@
+{
+    "name": "Test Subject",
+    "description": "Right click with nothing in your main hand to give yourself the portal gun.",
+    "icon": "portalgun:portal_gun",
+    "order": 4,
+    "impact": 3,
+    "powers": [
+        "critter:obtain_portal_gun",
+        "critter:spawn/chaos",
+        "critter:passive/elytra_flight",
+        "critter:passive/keep_inventory",
+        "critter:passive/ignore_water",
+        "critter:passive/night_vision",
+        "critter:passive/lava_vision",
+        "origins:fire_immunity"
+    ]
+}

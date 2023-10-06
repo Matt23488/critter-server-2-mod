@@ -1,0 +1,109 @@
+{
+    "type": "origins:multiple",
+    "name": "Fall Healing",
+    "description": "You will be healed by fall damage.",
+
+    "cancel_fall_damage": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:is_fall"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "flyIntoWall"
+                }
+            ]
+        },
+        "modifier": {
+            "name": "Fall damage immunity",
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+
+    "small_fall": {
+        "type": "origins:action_on_land",
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 2
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": ">",
+                    "compare_to": 4
+                },
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": "<=",
+                    "compare_to": 8
+                }
+            ]
+        }
+    },
+
+    "medium_fall": {
+        "type": "origins:action_on_land",
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 5
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": ">",
+                    "compare_to": 8
+                },
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": "<=",
+                    "compare_to": 12
+                }
+            ]
+        }
+    },
+
+    "large_fall": {
+        "type": "origins:action_on_land",
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 10
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": ">",
+                    "compare_to": 12
+                },
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": "<=",
+                    "compare_to": 16
+                }
+            ]
+        }
+    },
+
+    "epic_fall": {
+        "type": "origins:action_on_land",
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 20
+        },
+        "condition": {
+            "type": "origins:fall_distance",
+            "comparison": ">",
+            "compare_to": 16
+        }
+    }
+}

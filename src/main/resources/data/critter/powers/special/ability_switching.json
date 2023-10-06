@@ -1,0 +1,18 @@
+{
+    "type": "origins:active_self",
+    "name": "Ability Switching",
+    "description": "You can switch your active ability.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": "Switch abilities using %s"
+        }
+    ],
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "entity_action": {
+        "type": "origins:nothing"
+    }
+}

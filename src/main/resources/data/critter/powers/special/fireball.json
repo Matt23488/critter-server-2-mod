@@ -1,0 +1,21 @@
+{
+    "type": "origins:fire_projectile",
+    "name": "Fireball",
+    "description": "You can shoot fireballs like a ghast.",
+    "entity_type": "minecraft:fireball",
+    "count": 1,
+    "speed": 1,
+    "divergence": 1,
+    "cooldown": 600,
+    "sound": "minecraft:entity.ghast.shoot",
+    "hud_render": {
+        "sprite_location":"origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 7,
+        "should_render": true,
+        "condition": {
+            "type": "origins:constant",
+            "value": true
+        }
+    },
+    "key": "key.origins.primary_active"
+}

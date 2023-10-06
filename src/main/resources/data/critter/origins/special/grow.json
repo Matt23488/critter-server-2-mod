@@ -1,0 +1,12 @@
+{
+    "name": "Growth",
+    "description": "You can grow to enormous size.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:potion"
+    },
+    "powers": [
+        "critter:special/grow",
+        "critter:special/grow_switch"
+    ]
+}

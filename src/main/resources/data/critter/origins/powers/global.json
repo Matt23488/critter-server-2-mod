@@ -1,0 +1,11 @@
+{
+    "name": "Player",
+    "description": "Everyone has these abilities.",
+    "icon": {
+        "item": "minecraft:iron_pickaxe"
+    },
+    "powers": [
+        "critter:debug_advancements",
+        "critter:special/ability_switching"
+    ]
+}

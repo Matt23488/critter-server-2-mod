@@ -1,0 +1,17 @@
+{
+    "name": "Huggy Wuggy",
+    "description": "The creature lurking the abandoned Playtime Co. toy factory has decided play Minecraft.",
+    "icon": {
+        "item": "critter:huggy_wuggy"
+    },
+    "powers": [
+        "critter:passive/increased_health_5",
+        "critter:passive/blue_fur",
+        "critter:passive/keep_inventory",
+        "critter:passive/mutual_mounting",
+        "critter:passive/indoor_healing",
+        "critter:equipment/portal_gun",
+        "critter:special/grow_dummy",
+        "critter:grant/huggy_wuggy"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Huggy Wuggy power",
+    "order": 7,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/none",
+        "critter:powers/huggy_wuggy"
+    ]
+}

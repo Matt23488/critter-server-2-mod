@@ -1,0 +1,9 @@
+{
+    "name": "Chaos power",
+    "order": 99,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/none",
+        "critter:powers/chaos"
+    ]
+}

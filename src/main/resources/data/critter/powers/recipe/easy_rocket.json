@@ -1,0 +1,26 @@
+{
+    "type": "origins:recipe",
+    "name": "Easy Rocket",
+    "description": "Make rockets cheaply.",
+    "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "id": "easy_rocket",
+        "pattern": [
+            "/",
+            "/",
+            "W"
+        ],
+        "key": {
+            "/": {
+                "item": "minecraft:stick"
+            },
+            "W": {
+                "item": "minecraft:wheat_seeds"
+            }
+        },
+        "result": {
+            "item": "minecraft:firework_rocket",
+            "count": 4
+        }
+    }
+}

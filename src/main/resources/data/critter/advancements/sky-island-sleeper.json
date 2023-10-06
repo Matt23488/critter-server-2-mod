@@ -1,0 +1,73 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "display": {
+        "title": {
+            "text": "Sky Islands",
+            "color": "aqua"
+        },
+        "description": {
+            "text": "Slept in a bed in a village in the sky. Enjoy your new Skydancer powers."
+        },
+        "icon": {
+            "item": "minecraft:feather"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "Slept in Sky": {
+            "trigger": "minecraft:slept_in_bed",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "any_of",
+                        "terms": [
+                            {
+                                "condition": "location_check",
+                                "predicate": {
+                                    "dimension": "immersive_portals:alternate1",
+                                    "structure": "village_desert"
+                                }
+                            },
+                            {
+                                "condition": "location_check",
+                                "predicate": {
+                                    "dimension": "immersive_portals:alternate1",
+                                    "structure": "village_plains"
+                                }
+                            },
+                            {
+                                "condition": "location_check",
+                                "predicate": {
+                                    "dimension": "immersive_portals:alternate1",
+                                    "structure": "village_savanna"
+                                }
+                            },
+                            {
+                                "condition": "location_check",
+                                "predicate": {
+                                    "dimension": "immersive_portals:alternate1",
+                                    "structure": "village_snowy"
+                                }
+                            },
+                            {
+                                "condition": "location_check",
+                                "predicate": {
+                                    "dimension": "immersive_portals:alternate1",
+                                    "structure": "village_taiga"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "experience": 100,
+        "function": "critter:advancements/skydancer"
+    },
+    "parent": "critter:root"
+}

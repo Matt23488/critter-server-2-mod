@@ -1,0 +1,6 @@
+{
+    "type": "origins:elytra_flight",
+    "name": "Elytra Flight",
+    "description": "You always have Elytra.",
+    "render_elytra": true
+}

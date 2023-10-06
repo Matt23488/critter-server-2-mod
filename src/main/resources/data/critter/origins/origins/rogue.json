@@ -1,0 +1,17 @@
+{
+    "name": "Rogue",
+    "description": "You're a stealthy li'l guy.",
+    "icon": {
+        "item": "minecraft:ender_pearl"
+    },
+    "powers": [
+        "critter:passive/increased_health_4",
+        "critter:passive/sneak_invisibility",
+        "critter:passive/secret_stash",
+        "critter:passive/sneak_strike",
+        "critter:equipment/bow_and_arrow",
+        "critter:recipe/totem_of_undying",
+        "critter:special/throw_ender_pearl_dummy",
+        "critter:grant/rogue"
+    ]
+}

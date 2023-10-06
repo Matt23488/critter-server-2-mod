@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_xp_gain",
+    "name": "Experienced Fisherman",
+    "description": "You gain more experience orbs from fishing.",
+    "modifier": {
+        "operation": "multiply_total_multiplicative",
+        "value": 2
+    }
+}

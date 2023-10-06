@@ -1,0 +1,1 @@
+origin set @s critter:netherling_powers critter:powers/netherling

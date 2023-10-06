@@ -1,0 +1,16 @@
+{
+    "schema_version": "imm_ptl:v1",
+    "from": ["minecraft:overworld"], "to": "immersive_portals:alternate2",
+    "reversible": false,
+    "form": {
+        "type": "imm_ptl:flipping_floor_square_new",
+        "frame_block": "minecraft:dirt",
+        "area_block": "minecraft:air",
+        "generate_frame_if_not_found": true
+    },
+    "trigger": { "type": "imm_ptl:throw_item", "item": "minecraft:dirt" },
+    "post_invoke_commands": [
+        "/execute at @a run summon minecraft:experience_orb ~ ~ ~ {Value:1000}"
+    ]
+  }
+  

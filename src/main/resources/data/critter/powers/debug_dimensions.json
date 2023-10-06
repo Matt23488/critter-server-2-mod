@@ -1,0 +1,34 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Portal Debugging",
+    "description": "Portal debugging items",
+    "stacks": [
+        {
+            "item": "minecraft:cherry_leaves"
+        },
+        {
+            "item": "minecraft:amethyst_block"
+        },
+        {
+            "item": "minecraft:mushroom_stem"
+        },
+        {
+            "item": "minecraft:glowstone"
+        },
+        {
+            "item": "minecraft:obsidian"
+        },
+        {
+            "item": "minecraft:crying_obsidian"
+        },
+        {
+            "item": "minecraft:flint_and_steel"
+        },
+        {
+            "item": "minecraft:diamond"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ]
+}

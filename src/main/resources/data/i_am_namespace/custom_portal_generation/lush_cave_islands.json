@@ -1,0 +1,16 @@
+{
+    "schema_version": "imm_ptl:v1",
+    "from": ["minecraft:overworld"], "to": "critter:lush_cave_islands",
+    "form": {
+        "type": "imm_ptl:classical",
+        "from_frame_block": "minecraft:amethyst_block",
+        "to_frame_block": "minecraft:glowstone",
+        "area_block": "minecraft:air",
+        "generate_frame_if_not_found": true
+    },
+    "trigger": { "type": "imm_ptl:use_item", "item": "minecraft:diamond" },
+    "post_invoke_commands": [
+        "/execute at @a run summon minecraft:experience_orb ~ ~ ~ {Value:1000}"
+    ]
+  }
+  

@@ -1,0 +1,20 @@
+{
+    "type": "origins:active_self",
+    "name": "Spread Luck",
+    "description": "You can share your luck with others. Creates an area of effect giving increased luck to nearby players.",
+    "cooldown": 600,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 22
+    },
+    "key": "key.origins.primary_active",
+    "entity_action": {
+        "type": "origins:spawn_effect_cloud",
+        "radius": 16,
+        "effect": {
+            "effect": "minecraft:luck",
+            "amplifier": 3,
+            "duration": 12000
+        }
+    }
+}

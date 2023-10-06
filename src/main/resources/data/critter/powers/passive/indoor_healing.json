@@ -1,0 +1,16 @@
+{
+    "type": "origins:stacking_status_effect",
+    "name": "Claustrophilia",
+    "description": "You regenerate health when not outside.",
+
+    "min_stacks": -20,
+    "max_stacks": 361,
+    "duration_per_stack": 10,
+    "effect": {
+        "effect": "minecraft:regeneration"
+    },
+    "condition": {
+        "type": "origins:exposed_to_sky",
+        "inverted": true
+    }
+}

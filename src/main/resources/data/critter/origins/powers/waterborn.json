@@ -1,0 +1,17 @@
+{
+    "name": "Waterborn",
+    "description": "You have the power of a Waterborn.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:heart_of_the_sea"
+    },
+    "powers": [
+        "critter:passive/increased_health_3",
+        "critter:passive/fast_swim",
+        "critter:passive/water_breathing",
+        "critter:passive/water_vision",
+        "critter:equipment/trident",
+        "critter:recipe/trident",
+        "critter:special/ignore_water_toggle_dummy"
+    ]
+}

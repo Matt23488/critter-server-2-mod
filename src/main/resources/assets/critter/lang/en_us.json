@@ -1,0 +1,9 @@
+{
+    "itemGroup.critter.critter_item_group": "Critter Items",
+
+    "item.critter.huggy_wuggy": "Huggy Wuggy",
+    "item.critter.huggy_wuggy.tooltip": "This is the Huggy Wuggy item. It doesn't do anything.",
+
+    "item.critter.diamond_shard": "Diamond Shard",
+    "item.critter.diamond_shard.tooltip": "A shard of diamond"
+}

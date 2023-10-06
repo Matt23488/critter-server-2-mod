@@ -1,0 +1,8 @@
+{
+    "type": "origins:model_color",
+    "name": "Blue Fur",
+    "description": "You are covered in blue fur.",
+    "red": 0,
+    "green": 0,
+    "blue": 1
+}

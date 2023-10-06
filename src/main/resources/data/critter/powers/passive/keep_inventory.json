@@ -1,0 +1,5 @@
+{
+    "type": "origins:keep_inventory",
+    "name": "Keep Inventory",
+    "description": "You won't lose items upon death."
+}

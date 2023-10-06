@@ -1,0 +1,18 @@
+{
+    "type": "origins:active_self",
+    "name": "Ignore Water Toggle",
+    "description": "You can toggle the effects of water at will.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": "Toggle with %s"
+        }
+    ],
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "entity_action": {
+        "type": "origins:nothing"
+    }
+}

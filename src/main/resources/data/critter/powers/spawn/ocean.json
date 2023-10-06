@@ -1,0 +1,20 @@
+{
+    "type": "origins:modify_player_spawn",
+    "name": "Ocean Spawn",
+    "description": "You will spawn in a deep warm ocean biome.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "This only affects joining the server for the very first time. You can still sleep in a bed to set your spawn point.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "This will not work unless a deep warm ocean biome has already been generated.",
+            "sprite": "origins:textures/gui/badge/arrow_up.png"
+        }
+    ],
+    "dimension": "minecraft:overworld",
+    "biome": "minecraft:deep_warm_ocean",
+    "dimension_distance_multiplier": 1
+}

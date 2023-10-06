@@ -1,0 +1,8 @@
+{
+    "type": "origins:invisibility",
+    "name": "Sneak Invisibility",
+    "description": "You are invisibile while sneaking.",
+    "condition": {
+        "type": "origins:sneaking"
+    }
+}

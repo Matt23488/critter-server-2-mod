@@ -1,0 +1,14 @@
+{
+    "name": "Chaos",
+    "description": "???",
+    "icon": {
+        "item": "minecraft:end_crystal"
+    },
+    "powers": [
+        "critter:passive/self_glow",
+        "critter:passive/glowing_entities",
+        "critter:passive/stone_phasing",
+        "critter:special/random_effect_dummy",
+        "critter:grant/chaos"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "type": "origins:ignore_water",
+    "name": "Ignore Water",
+    "description": "Water acts as if it is not there for you."
+}

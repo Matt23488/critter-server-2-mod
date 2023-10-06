@@ -1,0 +1,20 @@
+{
+    "type": "origins:launch",
+    "name": "Launch",
+    "description": "You can launch yourself into the air.",
+    "cooldown": 600,
+    "hud_render": {
+        "bar_index": 4,
+        "should_render": true,
+        "condition": {
+            "type": "origins:constant",
+            "value": true
+        }
+    },
+    "sound": "minecraft:entity.parrot.fly",
+    "speed": 2,
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": true
+    }
+}

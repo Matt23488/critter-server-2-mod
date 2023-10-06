@@ -1,0 +1,12 @@
+{
+    "name": "Launch",
+    "description": "You can launch yourself into the air.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:feather"
+    },
+    "powers": [
+        "critter:special/launch",
+        "critter:special/launch_switch"
+    ]
+}

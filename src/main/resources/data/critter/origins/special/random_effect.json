@@ -1,0 +1,12 @@
+{
+    "name": "???",
+    "description": "???",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:end_crystal"
+    },
+    "powers": [
+        "critter:special/random_effect",
+        "critter:special/random_effect_switch"
+    ]
+}

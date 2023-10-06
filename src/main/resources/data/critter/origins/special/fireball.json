@@ -1,0 +1,12 @@
+{
+    "name": "Fireball",
+    "description": "You can shoot fireballs.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:fire_charge"
+    },
+    "powers": [
+        "critter:special/fireball",
+        "critter:special/fireball_switch"
+    ]
+}

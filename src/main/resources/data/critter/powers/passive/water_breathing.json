@@ -1,0 +1,14 @@
+{
+    "type": "origins:action_over_time",
+    "name": "Water Breathing",
+    "description": "You don't lose air underwater.",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:gain_air",
+        "value": 20
+    },
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Spread Luck",
+    "description": "You can share your good luck with others.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:knowledge_book",
+        "tag": "{Enchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:1}]}"
+    },
+    "powers": [
+        "critter:special/spread_luck",
+        "critter:special/spread_luck_switch"
+    ]
+}

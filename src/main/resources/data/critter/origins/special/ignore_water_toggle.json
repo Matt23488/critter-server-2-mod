@@ -1,0 +1,12 @@
+{
+    "name": "Ignore Water Toggle",
+    "description": "You can toggle the effects of water on and off.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:heart_of_the_sea"
+    },
+    "powers": [
+        "critter:special/ignore_water_toggle",
+        "critter:special/ignore_water_toggle_switch"
+    ]
+}

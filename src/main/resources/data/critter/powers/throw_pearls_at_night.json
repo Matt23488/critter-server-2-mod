@@ -1,0 +1,33 @@
+{
+    "type": "origins:fire_projectile",
+    "name": "Throw Pearls at Night",
+    "description": "Can throw ender pearls at night.",
+    "cooldown": 30,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "bar_index": 6
+    },
+    "entity_type": "origins:enderian_pearl",
+    "sound": "minecraft:entity.ender_pearl.throw",
+    "speed": 1.5,
+    "divergence": 1,
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": false
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:time_of_day",
+                "comparison": ">=",
+                "compare_to": 13000
+            },
+            {
+                "type": "origins:time_of_day",
+                "comparison": "<",
+                "compare_to": 23000
+            }
+        ]
+    }
+}

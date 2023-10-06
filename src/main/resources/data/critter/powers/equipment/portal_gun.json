@@ -1,0 +1,9 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Test Subject",
+    "description": "You spawn with the Aperture Science Handheld Portal Device.",
+    "recurrent": true,
+    "stack": {
+        "item": "portalgun:portal_gun"
+    }
+}

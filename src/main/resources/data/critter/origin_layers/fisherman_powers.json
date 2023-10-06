@@ -1,0 +1,9 @@
+{
+    "name": "Fisherman power",
+    "order": 8,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/none",
+        "critter:powers/fisherman"
+    ]
+}

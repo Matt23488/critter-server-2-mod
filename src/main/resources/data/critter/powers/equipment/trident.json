@@ -1,0 +1,9 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Trident",
+    "description": "You spawn with a Trident",
+    "recurrent": true,
+    "stack": {
+        "item": "minecraft:trident"
+    }
+}

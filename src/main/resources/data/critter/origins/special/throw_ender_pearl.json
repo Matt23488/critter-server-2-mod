@@ -1,0 +1,12 @@
+{
+    "name": "Throw Ender Pearl",
+    "description": "You can throw Ender Pearls.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:ender_pearl"
+    },
+    "powers": [
+        "critter:special/throw_ender_pearl",
+        "critter:special/throw_ender_pearl_switch"
+    ]
+}

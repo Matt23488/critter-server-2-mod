@@ -1,0 +1,9 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Iron Pickaxe",
+    "description": "You will always spawn with an Iron Pickaxe.",
+    "recurrent": true,
+    "stack": {
+        "item": "minecraft:iron_pickaxe"
+    }
+}

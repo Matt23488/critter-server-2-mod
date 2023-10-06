@@ -1,0 +1,23 @@
+{
+    "type": "origins:active_self",
+    "name": "???",
+    "description": "???",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "??? with %s"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "30 second cooldown"
+        }
+    ],
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "entity_action": {
+        "type": "origins:nothing"
+    }
+}

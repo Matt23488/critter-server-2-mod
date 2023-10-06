@@ -1,0 +1,27 @@
+{
+    "type": "origins:action_over_time",
+    "name": "Invisible Fishing",
+    "description": "You are invisible while fishing.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "You actually just need to be within 16 blocks of a fishing bobber entity"
+        }
+    ],
+    "interval": 20,
+    "rising_action": {
+        "type": "origins:execute_command",
+        "command": "power grant @s critter:orphaned/invisibility"
+    },
+    "falling_action": {
+        "type": "origins:execute_command",
+        "command": "power revoke @s critter:orphaned/invisibility"
+    },
+    "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @e[type=minecraft:fishing_bobber,distance=..16]",
+        "comparison": ">",
+        "compare_to": 0
+    }
+}

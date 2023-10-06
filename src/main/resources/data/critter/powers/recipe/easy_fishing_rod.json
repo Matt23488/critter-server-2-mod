@@ -1,0 +1,20 @@
+{
+    "type": "origins:recipe",
+    "name": "Rod Maker",
+    "description": "You can craft fishing rods with ease",
+    "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "id": "fisherman_fishing_rod",
+        "ingredients": [
+            {
+                "item": "minecraft:stick"
+            },
+            {
+                "item": "minecraft:string"
+            }
+        ],
+        "result": {
+            "item": "minecraft:fishing_rod"
+        }
+    }
+}

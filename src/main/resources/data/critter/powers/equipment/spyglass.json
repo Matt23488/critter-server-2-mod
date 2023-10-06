@@ -1,0 +1,9 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Spyglass",
+    "description": "You spawn with a Spyglass.",
+    "recurrent": true,
+    "stack": {
+        "item": "minecraft:spyglass"
+    }
+}

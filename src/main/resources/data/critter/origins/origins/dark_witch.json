@@ -1,0 +1,12 @@
+{
+    "name": "Dark Witch",
+    "description": "You are spooky af.",
+    "icon": {
+        "item": "minecraft:amethyst_shard"
+    },
+    "powers": [
+        "critter:passive/increased_health_7",
+        "critter:special/bewitch_skeletons",
+        "critter:grant/dark_witch"
+    ]
+}

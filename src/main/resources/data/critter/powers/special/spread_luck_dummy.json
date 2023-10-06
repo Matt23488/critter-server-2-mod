@@ -1,0 +1,23 @@
+{
+    "type": "origins:active_self",
+    "name": "Spread Luck",
+    "description": "You can share your luck with others. Creates an area of effect giving increased luck to nearby players.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Shoot with %s"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "30 second cooldown"
+        }
+    ],
+    "key": {
+        "key": "key.origins.primary_active"
+    },
+    "entity_action": {
+        "type": "origins:nothing"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "origins:active_self",
+    "name": "Bewitch Skeletons",
+    "description": "You can enchant skeletons to fight for you.",
+    "cooldown": 600,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 5
+    },
+    "key": "key.origins.primary_active",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "function critter:dark_witch/bewitch_skeletons"
+    }
+}

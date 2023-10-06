@@ -1,0 +1,8 @@
+{
+    "type": "origins:inventory",
+    "name": "Death Stash",
+    "description": "Provides an extra inventory that persists through death.",
+    "title": "Death Stash",
+    "container_type": "chest",
+    "key": "J"
+}

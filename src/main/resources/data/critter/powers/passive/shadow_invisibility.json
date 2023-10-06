@@ -1,0 +1,10 @@
+{
+    "type": "origins:invisibility",
+    "name": "Shadow Invisibility",
+    "description": "You are invisible in dark areas.",
+    "condition": {
+        "type": "origins:brightness",
+        "comparison": "<=",
+        "compare_to": 0.5
+    }
+}

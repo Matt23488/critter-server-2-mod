@@ -1,0 +1,45 @@
+{
+    "type": "origins:active_self",
+    "name": "Obtain Portal Gun",
+    "description": "Summons a Portal Gun into your inventory.",
+    "key": {
+        "key": "key.use"
+    },
+    "entity_action": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:inventory",
+                    "process_mode": "items",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "portalgun:portal_gun"
+                        }
+                    },
+                    "comparison": "<",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+            ]
+        },
+        "if_action": {
+            "type": "origins:give",
+            "stack": {
+                "item": "portalgun:portal_gun"
+            },
+            "preferred_slot": "mainhand"
+        },
+        "else_action": {
+            "type": "origins:nothing"
+        }
+    }
+}

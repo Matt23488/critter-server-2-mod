@@ -1,0 +1,9 @@
+{
+    "name": "Waterborn power",
+    "order": 5,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/none",
+        "critter:powers/waterborn"
+    ]
+}

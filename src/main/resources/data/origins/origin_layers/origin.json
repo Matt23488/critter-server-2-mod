@@ -1,0 +1,14 @@
+{
+    "replace": true,
+    "order": 0,
+    "hidden": true,
+    "origins": [
+        "critter:origins/netherling",
+        "critter:origins/skydancer",
+        "critter:origins/waterborn",
+        "critter:origins/rogue",
+        "critter:origins/huggy_wuggy",
+        "critter:origins/fisherman",
+        "critter:origins/dark_witch"
+    ]
+}

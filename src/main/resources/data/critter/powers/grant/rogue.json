@@ -1,0 +1,17 @@
+{
+    "type": "origins:action_on_callback",
+    "hidden": true,
+    "entity_action_chosen": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "origin set @s critter:rogue_powers critter:powers/rogue"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "origin set @s critter:active_special critter:special/throw_ender_pearl"
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "origins:modify_player_spawn",
+    "name": "The Sky World",
+    "description": "You will spawn in The Sky World.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "text": "This only affects joining the server for the very first time. You can still sleep in a bed to set your spawn point.",
+            "sprite": "origins:textures/gui/badge/info.png"
+        },
+        {
+            "type": "origins:tooltip",
+            "text": "This doesn't always work for some reason, so you may spawn in the overworld.",
+            "sprite": "origins:textures/gui/badge/arrow_up.png"
+        }
+    ],
+    "dimension": "immersive_portals:alternate1",
+    "dimension_distance_multiplier": 1
+}

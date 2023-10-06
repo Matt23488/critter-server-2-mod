@@ -1,0 +1,25 @@
+{
+    "type": "origins:recipe",
+    "name": "Totem of Undying Craftsman",
+    "description": "You can craft Totems of Undying.",
+    "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "id": "rogue_totem_of_undying",
+        "pattern": [
+            " # ",
+            "#D#",
+            " # "
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:gold_block"
+            },
+            "D": {
+                "item": "minecraft:diamond_block"
+            }
+        },
+        "result": {
+            "item": "minecraft:totem_of_undying"
+        }
+    }
+}

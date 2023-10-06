@@ -1,0 +1,17 @@
+{
+    "name": "Netherling",
+    "description": "You have the power of a Netherling.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:nether_star"
+    },
+    "powers": [
+        "critter:passive/increased_health_1",
+        "critter:passive/fire_healing",
+        "critter:passive/walk_on_lava",
+        "critter:passive/lava_vision",
+        "critter:equipment/iron_pickaxe",
+        "critter:recipe/netherrack_pickaxe",
+        "critter:special/fireball_dummy"
+    ]
+}

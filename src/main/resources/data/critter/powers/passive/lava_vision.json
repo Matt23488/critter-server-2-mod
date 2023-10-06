@@ -1,0 +1,7 @@
+{
+    "type": "origins:lava_vision",
+    "name": "Lava Vision",
+    "description": "You can see in lava.",
+    "s": 0.0,
+    "v": 32.0
+}

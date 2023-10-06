@@ -1,0 +1,8 @@
+{
+    "name": "global ability set",
+    "order": 1,
+    "auto_choose": true,
+    "origins": [
+        "critter:powers/global"
+    ]
+}

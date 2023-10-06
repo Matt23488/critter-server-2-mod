@@ -1,0 +1,10 @@
+{
+    "type": "origins:modify_attribute",
+    "name": "Good Luck",
+    "description": "You have increased luck.",
+    "attribute": "minecraft:generic.luck",
+    "modifier": {
+        "operation": "set_total",
+        "value": 512
+    }
+}

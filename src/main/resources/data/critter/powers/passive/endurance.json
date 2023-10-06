@@ -1,0 +1,10 @@
+{
+    "type": "origins:modify_exhaustion",
+    "name": "Endurance",
+    "description": "You exhaust at half speed.",
+    "modifier": {
+        "name": "Halved Exhaustion",
+        "operation": "multiply_base_additive",
+        "value": 0.5
+    }
+}

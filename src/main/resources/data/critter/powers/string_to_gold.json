@@ -1,0 +1,21 @@
+{
+    "type": "origins:recipe",
+    "name": "String to Gold",
+    "description": "You can spin string into gold.",
+    "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "id": "critter:recipes/string_to_gold",
+        "pattern": [
+            "##",
+            "##"
+        ],
+        "key": {
+            "#": {
+                    "item": "minecraft:string"
+            }
+        },
+        "result": {
+            "item": "minecraft:gold_nugget"
+        }
+    }
+}

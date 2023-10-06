@@ -1,0 +1,10 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Ol' Bess",
+    "description": "You spawn with Ol' Bess.",
+    "recurrent": true,
+    "stack": {
+        "item": "minecraft:fishing_rod",
+        "tag": "{Unbreakable:1b,Enchantments:[{id:\"minecraft:luck_of_the_sea\",lvl:3}],display:{Name:'{\"text\":\"Ol\\' Bess\"}'}}"
+    }
+}

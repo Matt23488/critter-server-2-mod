@@ -1,0 +1,12 @@
+{
+    "name": "Bewitch Skeletons",
+    "description": "You can enchant nearby skeletons to fight for you.",
+    "unchoosable": true,
+    "icon": {
+        "item": "minecraft:bone"
+    },
+    "powers": [
+        "critter:special/bewitch_skeletons",
+        "critter:special/bewitch_skeletons_switch"
+    ]
+}

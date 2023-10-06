@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_swim_speed",
+    "name": "Fast Swim",
+    "description": "You can swim 1.5x faster than normal.",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 1.5
+    }
+}

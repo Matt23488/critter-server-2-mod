@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "critter",
+    "pattern": [
+        "SSS",
+        "SSS",
+        "SSS"
+    ],
+    "key": {
+        "S": {
+            "item": "critter:diamond_shard"
+        }
+    },
+    "result": {
+        "item": "minecraft:diamond"
+    }
+}

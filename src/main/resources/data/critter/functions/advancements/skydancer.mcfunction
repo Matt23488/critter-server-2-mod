@@ -1,0 +1,1 @@
+origin set @s critter:skydancer_powers critter:powers/skydancer
