@@ -1,0 +1,1 @@
+execute at @e[type=minecraft:skeleton,distance=..16] run function critter:debug/spawn_skeleton
