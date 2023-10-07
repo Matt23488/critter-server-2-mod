@@ -1,0 +1,12 @@
+{
+    "pack": {
+        "name": "critter-origins",
+        "id": "critter_origins",
+        "pack_format": 15,
+        "authors": [
+            "Matthew Bryant",
+            "Nathan Bryant"
+        ],
+        "description": "Uses the Origins mod to craft a completely customized set of origins, with a way to gain powers from origins you didn't choose in addition to your own. Also adds some changes to Minecraft itself such as:\n  - custom dimensions\n  - custom advancements\n  - custom crafting recipes"
+    }
+}

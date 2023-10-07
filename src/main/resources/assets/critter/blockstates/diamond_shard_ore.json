@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "critter:block/diamond_shard_ore"
+        }
+    }
+}

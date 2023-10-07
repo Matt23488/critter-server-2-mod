@@ -10,7 +10,7 @@ import com.critter.CritterMod;
 import com.critter.entity.ai.goal.AttackHostileEntitiesIfBewitchedGoal;
 import com.critter.entity.ai.goal.AttackPlayerIfNotBewitchedGoal;
 import com.critter.entity.ai.goal.FollowPlayerGoal;
-import com.critter.entity.ai.goal.RevengeExceptBewitchedSkeletonsGoal;
+import com.critter.entity.ai.goal.RevengeExceptBewitchedHostileEntitiesGoal;
 
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.GoalSelector;
@@ -23,7 +23,7 @@ public abstract class BewitchedSkeletonMixin {
     @Redirect(method = "initGoals()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/goal/GoalSelector;add(ILnet/minecraft/entity/ai/goal/Goal;)V", ordinal = 6))
     private void overrideRevengeGoal(GoalSelector selector, int priority, Goal goal) {
         AbstractSkeletonEntity skeleton = (AbstractSkeletonEntity)(Object)this;
-        selector.add(priority, new RevengeExceptBewitchedSkeletonsGoal(skeleton));
+        selector.add(priority, new RevengeExceptBewitchedHostileEntitiesGoal(skeleton));
     }
 
     @Redirect(method = "initGoals()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/goal/GoalSelector;add(ILnet/minecraft/entity/ai/goal/Goal;)V", ordinal = 7))
@@ -43,7 +43,7 @@ public abstract class BewitchedSkeletonMixin {
 
         selector.add(1, new AttackHostileEntitiesIfBewitchedGoal(skeleton));
 
-        Goal followPlayerIfBewitched = new FollowPlayerGoal<>(skeleton, 1, __ -> skeleton.hasStatusEffect(CritterMod.BEWITCHED_SKELETON));
+        Goal followPlayerIfBewitched = new FollowPlayerGoal<>(skeleton, 1, __ -> skeleton.hasStatusEffect(CritterMod.BEWITCHED));
         selector.add(5, followPlayerIfBewitched);
     }
 }
