@@ -10,6 +10,7 @@
         "critter:special/throw_ender_pearl",
         "critter:special/grow",
         "critter:special/spread_luck",
+        "critter:special/bewitch_skeletons",
         "critter:special/random_effect"
     ]
 }

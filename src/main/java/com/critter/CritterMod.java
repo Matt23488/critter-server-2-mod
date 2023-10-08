@@ -25,11 +25,8 @@ import com.critter.item.DiamondShard;
 import com.critter.item.HuggyWuggy;
 
 public class CritterMod implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-    public static final Logger LOGGER = LoggerFactory.getLogger("critter");
 	public static final String MODID = "critter";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
 	public static final Block DIAMOND_SHARD_ORE = Registry.register(Registries.BLOCK, CritterMod.identifier("diamond_shard_ore"), new ExperienceDroppingBlock(AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.BASEDRUM).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
 
