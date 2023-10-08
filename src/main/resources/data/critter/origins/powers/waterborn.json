@@ -12,6 +12,6 @@
         "critter:passive/water_vision",
         "critter:equipment/trident",
         "critter:recipe/trident",
-        "critter:special/ignore_water_toggle_dummy"
+        "critter:special/ignore_water_toggle"
     ]
 }

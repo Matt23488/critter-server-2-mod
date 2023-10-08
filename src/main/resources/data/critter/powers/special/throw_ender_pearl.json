@@ -14,5 +14,10 @@
     "key": {
         "key": "key.origins.primary_active",
         "continuous": false
+    },
+    "condition": {
+        "type": "origins:origin",
+        "layer": "critter:active_special",
+        "origin": "critter:special/throw_ender_pearl"
     }
 }

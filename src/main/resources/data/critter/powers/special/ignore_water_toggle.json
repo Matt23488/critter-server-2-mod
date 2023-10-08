@@ -8,6 +8,11 @@
         "active_by_default": false,
         "key": {
             "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:origin",
+            "layer": "critter:active_special",
+            "origin": "critter:special/ignore_water_toggle"
         }
     },
 
@@ -30,6 +35,11 @@
                 "type": "origins:execute_command",
                 "command": "tellraw @s [\"\",{\"text\":\"Toggled Ignore Water \"},{\"text\":\"On\",\"color\":\"green\"}]"
             }
+        },
+        "condition": {
+            "type": "origins:origin",
+            "layer": "critter:active_special",
+            "origin": "critter:special/ignore_water_toggle"
         }
     },
 

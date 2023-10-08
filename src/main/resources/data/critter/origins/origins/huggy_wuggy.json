@@ -11,7 +11,7 @@
         "critter:passive/mutual_mounting",
         "critter:passive/indoor_healing",
         "critter:equipment/portal_gun",
-        "critter:special/grow_dummy",
+        "critter:special/grow",
         "critter:grant/huggy_wuggy"
     ]
 }

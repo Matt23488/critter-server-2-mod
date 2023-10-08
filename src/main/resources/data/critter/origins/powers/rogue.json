@@ -12,6 +12,6 @@
         "critter:passive/sneak_strike",
         "critter:equipment/bow_and_arrow",
         "critter:recipe/totem_of_undying",
-        "critter:special/throw_ender_pearl_dummy"
+        "critter:special/throw_ender_pearl"
     ]
 }

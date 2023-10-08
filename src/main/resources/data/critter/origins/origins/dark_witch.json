@@ -6,7 +6,7 @@
     },
     "powers": [
         "critter:passive/increased_health_7",
-        "critter:special/bewitch_skeletons_dummy",
+        "critter:special/bewitch_skeletons",
         "critter:grant/dark_witch"
     ]
 }

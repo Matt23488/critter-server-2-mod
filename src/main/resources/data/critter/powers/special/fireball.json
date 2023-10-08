@@ -17,5 +17,10 @@
             "value": true
         }
     },
-    "key": "key.origins.primary_active"
+    "key": "key.origins.primary_active",
+    "condition": {
+        "type": "origins:origin",
+        "layer": "critter:active_special",
+        "origin": "critter:special/fireball"
+    }
 }

@@ -38,6 +38,7 @@
         },
         "condition": {
             "type": "origins:origin",
+            "layer": "critter:active_special",
             "origin": "critter:special/grow"
         }
     },

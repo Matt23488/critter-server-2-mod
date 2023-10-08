@@ -12,7 +12,7 @@
         "critter:passive/lava_vision",
         "critter:equipment/iron_pickaxe",
         "critter:recipe/netherrack_pickaxe",
-        "critter:special/fireball_dummy",
+        "critter:special/fireball",
         "critter:grant/netherling"
     ]
 }

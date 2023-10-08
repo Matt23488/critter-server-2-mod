@@ -64,5 +64,10 @@
     "hud_render": {
         "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
         "bar_index": 18
+    },
+    "condition": {
+        "type": "origins:origin",
+        "layer": "critter:active_special",
+        "origin": "critter:special/random_effect"
     }
 }

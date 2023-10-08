@@ -10,6 +10,6 @@
         "critter:passive/self_glow",
         "critter:passive/glowing_entities",
         "critter:passive/stone_phasing",
-        "critter:special/random_effect_dummy"
+        "critter:special/random_effect"
     ]
 }

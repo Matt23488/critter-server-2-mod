@@ -16,5 +16,10 @@
             "amplifier": 3,
             "duration": 12000
         }
+    },
+    "condition": {
+        "type": "origins:origin",
+        "layer": "critter:active_special",
+        "origin": "critter:special/spread_luck"
     }
 }

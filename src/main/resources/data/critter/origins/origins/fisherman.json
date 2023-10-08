@@ -11,7 +11,7 @@
         "critter:passive/fish_exp",
         "critter:equipment/ol_bess",
         "critter:recipe/easy_fishing_rod",
-        "critter:special/spread_luck_dummy",
+        "critter:special/spread_luck",
         "critter:grant/fisherman"
     ]
 }

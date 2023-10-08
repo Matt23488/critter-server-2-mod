@@ -11,5 +11,10 @@
     "entity_action": {
         "type": "origins:execute_command",
         "command": "function critter:dark_witch/bewitch_skeletons"
+    },
+    "condition": {
+        "type": "origins:origin",
+        "layer": "critter:active_special",
+        "origin": "critter:special/bewitch_skeletons"
     }
 }

@@ -12,7 +12,7 @@
         "critter:passive/endurance",
         "critter:equipment/spyglass",
         "critter:recipe/easy_rocket",
-        "critter:special/launch_dummy",
+        "critter:special/launch",
         "critter:grant/skydancer"
     ]
 }
