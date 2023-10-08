@@ -1,0 +1,10 @@
+{
+    "type": "origins:starting_equipment",
+    "name": "Broomstick",
+    "description": "You spawn with your broomstick.",
+    "recurrent": true,
+    "stack": {
+        "item": "minecraft:stick",
+        "tag": "{display:{Name:'{\"text\":\"Broomstick\"}'}}"
+    }
+}

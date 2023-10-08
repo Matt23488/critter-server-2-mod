@@ -7,7 +7,9 @@
     },
     "powers": [
         "critter:passive/increased_health_7",
-        "critter:passive/creative_flight",
+        "critter:passive/broomstick_flight",
+        "origins:slow_falling",
+        "critter:equipment/broomstick",
         "critter:special/bewitch_skeletons"
     ]
 }
