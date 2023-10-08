@@ -21,7 +21,7 @@
                         },
                         {
                             "type": "origins:execute_command",
-                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Throw Ender Pearl\",\"color\":\"green\"}]"
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Throw Ender Pearl\",\"color\":\"#0c4c42\"}]"
                         }
                     ]
                 }
@@ -40,7 +40,7 @@
                         },
                         {
                             "type": "origins:execute_command",
-                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Growth\",\"color\":\"green\"}]"
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Growth\",\"color\":\"blue\"}]"
                         }
                     ]
                 }
@@ -78,7 +78,7 @@
                         },
                         {
                             "type": "origins:execute_command",
-                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Bewitch Skeletons\",\"color\":\"green\"}]"
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Bewitch Skeletons\",\"color\":\"dark_purple\"}]"
                         }
                     ]
                 }
@@ -97,7 +97,7 @@
                         },
                         {
                             "type": "origins:execute_command",
-                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"???\",\"color\":\"green\"}]"
+                            "command": "tellraw @s [\"\",{\"text\":\"Switched Special to \"},{\"text\":\"Random Effect\",\"obfuscated\":true,\"color\":\"gray\"}]"
                         }
                     ]
                 }
@@ -135,7 +135,7 @@
                         },
                         {
                             "type": "origins:execute_command",
-                            "command": "tellraw @s [\"\",{\"text\": \"Switched Special to \"}, {\"text\": \"Launch\", \"color\": \"green\"}]"
+                            "command": "tellraw @s [\"\",{\"text\": \"Switched Special to \"}, {\"text\": \"Launch\", \"color\": \"aqua\"}]"
                         }
                     ]
                 }
