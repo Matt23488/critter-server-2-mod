@@ -28,7 +28,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "critter companion kill @s withered"
+                    "command": "critter kill @s withered"
                 }
             ]
         },
@@ -37,7 +37,7 @@
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "critter companion summon @s withered"
+                    "command": "critter summon @s withered {HandItems:[{id:'minecraft:bow',Count:1,tag:{Enchantments:[{id:'minecraft:power',lvl:5},{id:'minecraft:punch',lvl:2}]}}]}"
                 },
                 {
                     "type": "origins:change_resource",

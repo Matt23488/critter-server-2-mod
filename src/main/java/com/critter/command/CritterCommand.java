@@ -4,13 +4,13 @@ import com.critter.CritterMod;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 
-import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.command.argument.NbtCompoundArgumentType;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
@@ -34,37 +34,36 @@ public class CritterCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(
             literal("critter").requires(scs -> scs.hasPermissionLevel(2))
-                .then(literal("companion")
-                    .then(literal("summon")
-                        .then(
-                            getCompanionNode(CritterCommand::summon_companion)
+                .then(literal("summon")
+                    .then(argument("player", EntityArgumentType.player())
+                        .then(argument("critter_type", StringArgumentType.word())
+                            .suggests(new CritterSuggestionProvider())
+                            .executes(CritterCommand::summon_companion)
+                            .then(argument("nbt", NbtCompoundArgumentType.nbtCompound())
+                                .executes(CritterCommand::summon_companion)
+                            )
                         )
                     )
-                    .then(literal("kill")
-                        .then(
-                            getCompanionNode(CritterCommand::kill_companion)
+                )
+                .then(literal("kill")
+                    .then(argument("player", EntityArgumentType.player())
+                        .then(argument("critter_type", StringArgumentType.word())
+                            .suggests(new CritterSuggestionProvider())
+                            .executes(CritterCommand::kill_companion)
                         )
                     )
                 )
         );
     }
 
-    private static RequiredArgumentBuilder<ServerCommandSource, EntitySelector> getCompanionNode(IExecutor executor) {
-        return argument("player", EntityArgumentType.player())
-            .then(argument("companion_type", StringArgumentType.word())
-                .suggests(new CompanionSuggestionProvider())
-                .executes(executor::execute)
-            );
-    }
-
     private static int summon_companion(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
-        var companionType = StringArgumentType.getString(ctx, "companion_type");
-        LOGGER.warn("companionType=" + companionType);
-        if (!CompanionSuggestionProvider.isValid(companionType))
+        var companionType = StringArgumentType.getString(ctx, "critter_type");
+        if (!CritterSuggestionProvider.isValid(companionType))
             throw new SimpleCommandExceptionType(Text.of("Invalid Critter type: '" + companionType + "'")).create();
 
         var world = ctx.getSource().getWorld();
         var player = EntityArgumentType.getPlayer(ctx, "player");
+        var nbt = getNbt(ctx);
 
         for (var tag : player.getCommandTags()) {
             var prefix = TAG_PREFIX + companionType;
@@ -76,7 +75,7 @@ public class CritterCommand {
         }
 
         LOGGER.warn("companionType=" + companionType);
-        var companion = CompanionSuggestionProvider.createCompanion(companionType, world, player);
+        var companion = CritterSuggestionProvider.createCritter(companionType, world, player, nbt);
 
         player.addCommandTag(TAG_PREFIX + companionType + companion.getUuidAsString());
         world.spawnEntity(companion);
@@ -86,8 +85,8 @@ public class CritterCommand {
     }
 
     private static int kill_companion(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
-        var companionType = StringArgumentType.getString(ctx, "companion_type");
-        if (!CompanionSuggestionProvider.isValid(companionType))
+        var companionType = StringArgumentType.getString(ctx, "critter_type");
+        if (!CritterSuggestionProvider.isValid(companionType))
             throw new SimpleCommandExceptionType(Text.of("Invalid Critter type: '" + companionType + "'")).create();
 
         var world = ctx.getSource().getWorld();
@@ -122,7 +121,11 @@ public class CritterCommand {
         return Command.SINGLE_SUCCESS;
     }
 
-    private interface IExecutor {
-        int execute(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException;
+    private static NbtCompound getNbt(CommandContext<ServerCommandSource> ctx) {
+        try {
+            return NbtCompoundArgumentType.getNbtCompound(ctx, "nbt");
+        } catch (Exception e) {
+            return new NbtCompound();
+        }
     }
 }
