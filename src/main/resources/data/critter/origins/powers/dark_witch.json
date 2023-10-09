@@ -9,6 +9,7 @@
         "critter:passive/increased_health_7",
         "critter:passive/broomstick_flight",
         "origins:slow_falling",
+        "critter:passive/withered_companion",
         "critter:equipment/broomstick",
         "critter:special/bewitch_skeletons"
     ]

@@ -1,6 +1,7 @@
 package com.critter;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.block.AbstractBlock;
@@ -20,6 +21,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.critter.command.CritterCommand;
 import com.critter.entity.effect.BewitchedHostileEntityStatusEffect;
 import com.critter.item.DiamondShard;
 import com.critter.item.HuggyWuggy;
@@ -48,9 +50,9 @@ public class CritterMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+			CritterCommand.register(dispatcher);
+		});
 	}
 
 	public static Identifier identifier(String path) {
