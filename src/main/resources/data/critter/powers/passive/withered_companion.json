@@ -28,7 +28,7 @@
                 },
                 {
                     "type": "origins:execute_command",
-                    "command": "critter withered_companion take @s"
+                    "command": "critter companion kill @s withered"
                 }
             ]
         },
@@ -37,7 +37,7 @@
             "actions": [
                 {
                     "type": "origins:execute_command",
-                    "command": "critter withered_companion give @s"
+                    "command": "critter companion summon @s withered"
                 },
                 {
                     "type": "origins:change_resource",
@@ -60,14 +60,14 @@
     },
 
     "deplete_resource": {
-        "type": "origins:action_over_time",
+        "type": "origins:self_action_when_hit",
+        "cooldown": 60,
         "entity_action": {
             "type": "origins:change_resource",
             "operation": "add",
-            "change": -1,
+            "change": -5,
             "resource": "*:*_resource"
         },
-        "interval": 20,
         "condition": {
             "type": "origins:resource",
             "comparison": "==",
@@ -84,12 +84,28 @@
             "change": 1,
             "resource": "*:*_resource"
         },
-        "interval": 10,
+        "interval": 60,
         "condition": {
             "type": "origins:resource",
             "comparison": "==",
             "compare_to": 0,
             "resource": "*:*_depletion_toggle"
+        }
+    },
+
+    "kill_companion_on_player_death": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "*:*_resource"
+        },
+        "condition": {
+            "type": "origins:health",
+            "compare_to": 0,
+            "comparison": "<="
         }
     }
 }

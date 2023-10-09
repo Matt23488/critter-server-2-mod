@@ -15,9 +15,20 @@ import net.minecraft.entity.player.PlayerEntity;
 public abstract class LivingEntityMixin {
 
     @Redirect(method = "damage(Lnet/minecraft/entity/damage/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;isInvulnerableTo(Lnet/minecraft/entity/damage/DamageSource;)Z", ordinal = 0))
-    private boolean injectBewitchedMobImmunity(LivingEntity target, DamageSource damageSource) {
+    private boolean injectBewitchedMobImmunityLogic(LivingEntity target, DamageSource damageSource) {
         var attacker = damageSource.getAttacker();
-        if ((target instanceof PlayerEntity || target.hasStatusEffect(CritterMod.BEWITCHED)) && attacker != null && attacker instanceof HostileEntity && ((HostileEntity)attacker).hasStatusEffect(CritterMod.BEWITCHED))
+        if (attacker == null)
+            return target.isInvulnerableTo(damageSource);
+
+        var targetIsPlayer = target instanceof PlayerEntity;
+        var targetIsBewitched = target.hasStatusEffect(CritterMod.BEWITCHED);
+        var attackerIsPlayer = attacker instanceof PlayerEntity;
+        var attackerIsBewitched = attacker instanceof HostileEntity && ((HostileEntity)attacker).hasStatusEffect(CritterMod.BEWITCHED);
+
+        var isPlayerAndShouldBeImmune = targetIsPlayer && attackerIsBewitched;
+        var isBewitchedAndShouldBeImmune = targetIsBewitched && (attackerIsBewitched || attackerIsPlayer);
+
+        if (isPlayerAndShouldBeImmune || isBewitchedAndShouldBeImmune)
             return true;
 
         return target.isInvulnerableTo(damageSource);
