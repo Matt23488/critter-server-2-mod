@@ -4,6 +4,7 @@
     "description": "You will always spawn with an Iron Pickaxe.",
     "recurrent": true,
     "stack": {
-        "item": "minecraft:iron_pickaxe"
+        "item": "minecraft:iron_pickaxe",
+        "tag": "{Enchantments:[{id:'minecraft:vanishing_curse',lvl:1}]}"
     }
 }

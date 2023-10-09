@@ -5,7 +5,8 @@
     "recurrent": true,
     "stacks": [
         {
-            "item": "minecraft:bow"
+            "item": "minecraft:bow",
+            "tag": "{Enchantments:[{id:'minecraft:vanishing_curse',lvl:1}]}"
         },
         {
             "item": "minecraft:arrow",

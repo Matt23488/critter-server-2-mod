@@ -4,6 +4,7 @@
     "description": "You spawn with a Spyglass.",
     "recurrent": true,
     "stack": {
-        "item": "minecraft:spyglass"
+        "item": "minecraft:spyglass",
+        "tag": "{Enchantments:[{id:'minecraft:vanishing_curse',lvl:1}]}"
     }
 }

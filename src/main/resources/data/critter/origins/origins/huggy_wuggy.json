@@ -10,6 +10,7 @@
         "critter:passive/keep_inventory",
         "critter:passive/mutual_mounting",
         "critter:passive/indoor_healing",
+        "critter:companion/allay",
         "critter:equipment/portal_gun",
         "critter:special/grow",
         "critter:grant/huggy_wuggy"

@@ -1,0 +1,122 @@
+{
+    "type": "origins:multiple",
+    "name": "Withered Companion",
+    "description": "You have a Wither Skeleton that will die after awhile and respawn after a short time.",
+
+    "resource": {
+        "type": "origins:resource",
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 19,
+            "should_render": true
+        },
+        "min": 0,
+        "max": 100,
+        "start_value": 95,
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "*:*_cooldown"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "operation": "set",
+                    "change": 0,
+                    "resource": "*:*_spawned_flag"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "critter companion kill @s withered"
+                }
+            ]
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "critter companion summon @s withered"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "operation": "set",
+                    "change": 1,
+                    "resource": "*:*_spawned_flag"
+                }
+            ]
+        }
+    },
+
+    "spawned_flag": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "deplete_when_hit": {
+        "type": "origins:self_action_when_hit",
+        "cooldown": 40,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "operation": "add",
+            "change": -5,
+            "resource": "*:*_resource"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "comparison": "==",
+            "compare_to": 1,
+            "resource": "*:*_spawned_flag"
+        }
+    },
+
+    "cooldown": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "operation": "add",
+            "change": 1,
+            "resource": "*:*_resource"
+        },
+        "interval": 60,
+        "condition": {
+            "type": "origins:resource",
+            "comparison": "==",
+            "compare_to": 0,
+            "resource": "*:*_spawned_flag"
+        }
+    },
+
+    "kill_companion_on_player_death": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "operation": "set",
+            "change": 0,
+            "resource": "*:*_resource"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:health",
+                    "compare_to": 0,
+                    "comparison": "<="
+                },
+                {
+                    "type": "origins:resource",
+                    "comparison": "==",
+                    "compare_to": 1,
+                    "resource": "*:*_spawned_flag"
+                }
+            ]
+        }
+    }
+}

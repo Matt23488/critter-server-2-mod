@@ -4,6 +4,7 @@
     "description": "You spawn with the Aperture Science Handheld Portal Device.",
     "recurrent": true,
     "stack": {
-        "item": "portalgun:portal_gun"
+        "item": "portalgun:portal_gun",
+        "tag": "{Enchantments:[{id:'minecraft:vanishing_curse',lvl:1}]}"
     }
 }

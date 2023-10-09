@@ -4,6 +4,7 @@
     "description": "You spawn with a Trident",
     "recurrent": true,
     "stack": {
-        "item": "minecraft:trident"
+        "item": "minecraft:trident",
+        "tag": "{Enchantments:[{id:'minecraft:vanishing_curse',lvl:1}]}"
     }
 }
