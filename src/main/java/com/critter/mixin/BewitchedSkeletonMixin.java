@@ -7,11 +7,11 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import com.critter.CritterMod;
-import com.critter.entity.ai.goal.AttackHostileEntitiesIfBewitchedGoal;
+import com.critter.entity.ai.goal.AttackHostileEntitiesGoal;
 import com.critter.entity.ai.goal.AttackIfNotBewitchedGoal;
 import com.critter.entity.ai.goal.FollowPlayerGoal;
 import com.critter.entity.ai.goal.RevengeExceptBewitchedHostileEntitiesGoal;
-import com.critter.entity.ai.goal.RevengePlayerIfBewitchedGoal;
+import com.critter.entity.ai.goal.RevengePlayerGoal;
 
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.GoalSelector;
@@ -53,10 +53,10 @@ public abstract class BewitchedSkeletonMixin {
         var attackTurtleIfNotBewitched = new AttackIfNotBewitchedGoal<>(skeleton, TurtleEntity.class);
         selector.add(priority, attackTurtleIfNotBewitched);
 
-        selector.add(1, new RevengePlayerIfBewitchedGoal(skeleton));
-        selector.add(2, new AttackHostileEntitiesIfBewitchedGoal(skeleton));
+        selector.add(1, new RevengePlayerGoal(skeleton, target -> skeleton.hasStatusEffect(CritterMod.BEWITCHED) && !target.hasStatusEffect(CritterMod.BEWITCHED)));
+        selector.add(2, new AttackHostileEntitiesGoal(skeleton, target -> skeleton.hasStatusEffect(CritterMod.BEWITCHED) && !target.hasStatusEffect(CritterMod.BEWITCHED)));
 
-        var followPlayerIfBewitched = new FollowPlayerGoal<>(skeleton, 1.5, __ -> skeleton.hasStatusEffect(CritterMod.BEWITCHED));
+        var followPlayerIfBewitched = new FollowPlayerGoal(skeleton, 1.5, __ -> skeleton.hasStatusEffect(CritterMod.BEWITCHED));
         selector.add(5, followPlayerIfBewitched);
     }
 }

@@ -1,16 +1,23 @@
 package com.critter.entity.ai.goal;
 
+import java.util.function.Predicate;
+
 import com.critter.CritterMod;
 
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.PathAwareEntity;
 
-public class AttackHostileEntitiesIfBewitchedGoal extends ActiveTargetGoal<HostileEntity> {
+public class AttackHostileEntitiesGoal extends ActiveTargetGoal<HostileEntity> {
     private static final TargetPredicate TEMPTING_ENTITY_PREDICATE = TargetPredicate.createNonAttackable().setBaseMaxDistance(64.0).ignoreVisibility();
 
-    public AttackHostileEntitiesIfBewitchedGoal(HostileEntity hostileEntity) {
-        super(hostileEntity, HostileEntity.class, true, e -> !e.hasStatusEffect(CritterMod.BEWITCHED) && hostileEntity.hasStatusEffect(CritterMod.BEWITCHED));
+    public AttackHostileEntitiesGoal(PathAwareEntity entity) {
+        this(entity, __ -> true);
+    }
+    
+    public AttackHostileEntitiesGoal(PathAwareEntity entity, Predicate<HostileEntity> goalPredicate) {
+        super(entity, HostileEntity.class, true, e -> e instanceof HostileEntity && goalPredicate.test((HostileEntity)e));
     }
 
     @Override

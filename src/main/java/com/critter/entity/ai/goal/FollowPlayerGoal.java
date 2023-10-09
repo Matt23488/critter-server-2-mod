@@ -2,7 +2,6 @@ package com.critter.entity.ai.goal;
 
 import java.util.EnumSet;
 import java.util.function.Predicate;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.TemptGoal;
@@ -13,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 /*
  * This goal is mostly a copy of TemptGoal, with the ingredient, scared, and look at stuff removed.
  */
-public class FollowPlayerGoal<T extends LivingEntity>
+public class FollowPlayerGoal
 extends Goal {
     private static final TargetPredicate FOLLOW_TARGET_PREDICATE = TargetPredicate.createNonAttackable().setBaseMaxDistance(64.0).ignoreVisibility();
     private final TargetPredicate predicate;
@@ -24,6 +23,10 @@ extends Goal {
     protected PlayerEntity closestPlayer;
     private int cooldown;
     private boolean active;
+
+    public FollowPlayerGoal(PathAwareEntity entity, double speed) {
+        this(entity, speed, __ -> true);
+    }
 
     public FollowPlayerGoal(PathAwareEntity entity, double speed, Predicate<?> goalPredicate) {
         this.mob = entity;
@@ -40,7 +43,7 @@ extends Goal {
             return false;
         }
         this.closestPlayer = this.mob.getWorld().getClosestPlayer(this.predicate, this.mob);
-        return this.closestPlayer != null;
+        return this.closestPlayer != null && this.goalPredicate.test(null);
     }
 
     @Override

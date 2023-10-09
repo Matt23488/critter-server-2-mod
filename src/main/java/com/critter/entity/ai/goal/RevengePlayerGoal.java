@@ -1,20 +1,27 @@
 package com.critter.entity.ai.goal;
 
+import java.util.function.Predicate;
+
 import com.critter.CritterMod;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.RevengeGoal;
-import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.PathAwareEntity;
 
-public class RevengePlayerIfBewitchedGoal extends RevengeGoal {
-    public RevengePlayerIfBewitchedGoal(HostileEntity hostileEntity) {
-        super(hostileEntity, new Class[0]);
+public class RevengePlayerGoal extends RevengeGoal {
+    private final Predicate<LivingEntity> predicate;
+
+    public RevengePlayerGoal(PathAwareEntity entity) {
+        this(entity, __ -> true);
+    }
+    
+    public RevengePlayerGoal(PathAwareEntity entity, Predicate<LivingEntity> predicate) {
+        super(entity, new Class[0]);
+        this.predicate = predicate;
     }
 
     @Override
     public boolean canStart() {
-        if (!this.mob.hasStatusEffect(CritterMod.BEWITCHED))
-            return false;
-
         var player = this.mob.getWorld().getClosestPlayer(this.mob, 32.0);
         if (player == null)
             return false;
@@ -23,7 +30,10 @@ public class RevengePlayerIfBewitchedGoal extends RevengeGoal {
         if (attacker == null)
             return false;
 
-        return this.mob.canTarget(attacker) && attacker instanceof HostileEntity && !attacker.hasStatusEffect(CritterMod.BEWITCHED);
+        if (!this.predicate.test(attacker))
+            return false;
+
+        return this.mob.canTarget(attacker);// && attacker instanceof HostileEntity && !attacker.hasStatusEffect(CritterMod.BEWITCHED);
     }
 
     @Override
@@ -37,9 +47,6 @@ public class RevengePlayerIfBewitchedGoal extends RevengeGoal {
 
     @Override
     public boolean shouldContinue() {
-        if (!this.mob.hasStatusEffect(CritterMod.BEWITCHED))
-            return false;
-
         var precondition = super.shouldContinue();
 
         var player = this.mob.getWorld().getClosestPlayer(this.mob, 32.0);
@@ -49,6 +56,9 @@ public class RevengePlayerIfBewitchedGoal extends RevengeGoal {
         var attacker = player.getAttacker();
         if (attacker == null)
             return precondition;
+
+        if (!this.predicate.test(attacker))
+            return false;
 
         return this.target == attacker && !attacker.hasStatusEffect(CritterMod.BEWITCHED) && precondition;
     }
