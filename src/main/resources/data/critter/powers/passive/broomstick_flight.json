@@ -3,23 +3,42 @@
     "name": "Broomstick Flight",
     "description": "You have flight like in Creative Mode while holding your broomstick.",
     "condition": {
-        "type": "origins:or",
+        "type": "origins:and",
         "conditions": [
             {
-                "type": "origins:equipped_item",
-                "equipment_slot": "mainhand",
-                "item_condition": {
-                    "type": "origins:nbt",
-                    "nbt": "{display:{Name:'{\"text\":\"Broomstick\"}'}}"
-                }
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:submerged_in",
+                        "fluid": "minecraft:water"
+                    },
+                    {
+                        "type": "origins:submerged_in",
+                        "fluid": "minecraft:lava"
+                    }
+                ],
+                "inverted": true
             },
             {
-                "type": "origins:equipped_item",
-                "equipment_slot": "offhand",
-                "item_condition": {
-                    "type": "origins:nbt",
-                    "nbt": "{display:{Name:'{\"text\":\"Broomstick\"}'}}"
-                }
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{display:{Name:'{\"text\":\"Broomstick\"}'}}"
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{display:{Name:'{\"text\":\"Broomstick\"}'}}"
+                        }
+                    }
+                ]
             }
         ]
     }

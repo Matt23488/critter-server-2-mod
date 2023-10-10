@@ -5,6 +5,7 @@
     "recurrent": true,
     "stack": {
         "item": "minecraft:stick",
-        "tag": "{display:{Name:'{\"text\":\"Broomstick\"}'},Enchantments:[{id:'minecraft:vanishing_curse',lvl:1}]}"
+        "tag": "{display:{Name:'{\"text\":\"Broomstick\"}'},Enchantments:[{id:'minecraft:vanishing_curse',lvl:1}]}",
+        "slot": 40
     }
 }
