@@ -23,8 +23,6 @@ import net.minecraft.util.Identifier;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
-import java.util.UUID;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,8 +81,8 @@ public class CritterCommand {
         var player = EntityArgumentType.getPlayer(ctx, "player");
         var nbt = getNbt(ctx);
 
+        var prefix = TAG_PREFIX + critterType;
         for (var tag : player.getCommandTags()) {
-            var prefix = TAG_PREFIX + critterType;
             if (tag.startsWith(prefix)) {
                 var message = player.getEntityName() + " already has that Critter";
                 LOGGER.warn(message);
@@ -93,13 +91,13 @@ public class CritterCommand {
         }
 
         var critter = CritterSuggestionProvider.createCritter(critterType, world, player, nbt);
-        var critterNbt = new NbtCompound();
-        critter.writeNbt(critterNbt);
 
-        player.addCommandTag(TAG_PREFIX + critterType + ".uuid." + critter.getUuidAsString());
-        player.addCommandTag(TAG_PREFIX + critterType + ".nbt." + critterNbt.asString());
         world.spawnEntity(critter);
         critter.playSound(SoundEvent.of(new Identifier("entity.illusioner.cast_spell")), 1, 1);
+
+        nbt.putUuid("UUID", critter.getUuid());
+        player.addCommandTag(TAG_PREFIX + critterType + nbt.asString());
+
 
         return Command.SINGLE_SUCCESS;
     }
@@ -111,7 +109,16 @@ public class CritterCommand {
 
         var player = EntityArgumentType.getPlayer(ctx, "player");
 
-        var critter = findCritter(ctx, player, critterType, true);
+        var critter = findCritter(ctx, player, critterType);
+
+        var tags = player.getCommandTags();
+        var critterTag = "";
+        var prefix = TAG_PREFIX + critterType;
+        for (var tag : tags) {
+            if (tag.startsWith(prefix))
+                critterTag = tag;
+        }
+        tags.remove(critterTag);
 
         critter.kill();
 
@@ -126,7 +133,7 @@ public class CritterCommand {
         var world = ctx.getSource().getWorld();
         var player = EntityArgumentType.getPlayer(ctx, "player");
 
-        var critter = findCritter(ctx, player, critterType, false);
+        var critter = findCritter(ctx, player, critterType);
         if (critter == null)
             return Command.SINGLE_SUCCESS;
 
@@ -152,7 +159,7 @@ public class CritterCommand {
             throw new SimpleCommandExceptionType(Text.of("If you aren't a player you must specify one.")).create();
 
         for (var critterType : CritterSuggestionProvider.CRITTER_TYPES) {
-            var critter = findCritter(ctx, player, critterType, false);
+            var critter = findCritter(ctx, player, critterType);
             if (critter == null)
                 continue;
 
@@ -162,32 +169,21 @@ public class CritterCommand {
         return Command.SINGLE_SUCCESS;
     }
 
-    private static Entity findCritter(CommandContext<ServerCommandSource> ctx, ServerPlayerEntity player, String critterType, boolean removeTags) throws CommandSyntaxException {
-        var critterUuidString = "";
+    private static Entity findCritter(CommandContext<ServerCommandSource> ctx, ServerPlayerEntity player, String critterType) throws CommandSyntaxException {
         var critterNbtString = "";
         var tags = player.getCommandTags();
+        var prefix = TAG_PREFIX + critterType;
         for (var tag : tags) {
-            var prefix = TAG_PREFIX + critterType + ".uuid.";
-            if (tag.startsWith(prefix)) {
-                critterUuidString = tag.substring(prefix.length());
-                continue;
-            }
-
-            prefix = TAG_PREFIX + critterType + ".nbt.";
             if (tag.startsWith(prefix)) {
                 critterNbtString = tag.substring(prefix.length());
             }
         }
 
-        if (critterUuidString.isEmpty())
+        if (critterNbtString.isEmpty())
             return null;
 
-        if (removeTags) {
-            tags.remove(TAG_PREFIX + critterType + ".uuid." + critterUuidString);
-            tags.remove(TAG_PREFIX + critterType + ".nbt." + critterNbtString);
-        }
-
-        var critterUuid = UUID.fromString(critterUuidString);
+        var critterNbt = StringNbtReader.parse(critterNbtString);
+        var critterUuid = critterNbt.getUuid("UUID");
         Entity critter = null;
         for (var world : ctx.getSource().getServer().getWorlds()) {
             critter = world.getEntity(critterUuid);
@@ -199,12 +195,8 @@ public class CritterCommand {
             LOGGER.warn(player.getEntityName() + "'s Critter despawned. Respawning...");
 
             var world = player.getServerWorld();
-            critter = CritterSuggestionProvider.createCritter(critterType, world, player, StringNbtReader.parse(critterNbtString));
+            critter = CritterSuggestionProvider.createCritter(critterType, world, player, critterNbt);
             world.spawnEntity(critter);
-
-            // This is unnecessary because the UUID is part of the NBT so it stays the same. However this still makes me feel better.
-            tags.remove(TAG_PREFIX + critterType + ".uuid." + critterUuidString);
-            tags.add(TAG_PREFIX + critterType + ".uuid." + critter.getUuidAsString());
         }
 
         return critter;
