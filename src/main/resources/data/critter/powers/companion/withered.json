@@ -23,10 +23,6 @@
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:trigger_cooldown",
-                    "power": "*:*_cooldown"
-                },
-                {
                     "type": "origins:change_resource",
                     "operation": "set",
                     "change": 0,
