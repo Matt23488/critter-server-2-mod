@@ -110,6 +110,8 @@ public class CritterCommand {
         var player = EntityArgumentType.getPlayer(ctx, "player");
 
         var critter = findCritter(ctx, player, critterType);
+        if (critter == null)
+            return Command.SINGLE_SUCCESS;
 
         var tags = player.getCommandTags();
         var critterTag = "";
